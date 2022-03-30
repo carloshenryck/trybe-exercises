@@ -1,4 +1,5 @@
 Unix
 Bash
 Git 
-CSS
+Github
+Javascript
