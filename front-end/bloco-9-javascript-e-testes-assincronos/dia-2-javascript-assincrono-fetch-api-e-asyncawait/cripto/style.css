@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(40, 40, 40);
+  font-family: 'Poppins', sans-serif;
+}
+
+span {
+  font-weight: 600;
+}
+
+#coins {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-top: 50px;
+}
+
+.coin {
+  flex-basis: 30%;
+  color: white;
+  background-color: rgb(60, 60, 60);
+  height: 80px;
+  border-radius: 5px;
+  margin: 0 auto 10px;
+  font-weight: 400;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+}
+
+.coin:hover {
+  background-color: rgb(50, 50, 50);
+}
+
+@media (max-width: 1800px) {
+  .coin {
+    flex-basis: 40%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .coin {
+    flex-basis: 100%;
+  }
+}
