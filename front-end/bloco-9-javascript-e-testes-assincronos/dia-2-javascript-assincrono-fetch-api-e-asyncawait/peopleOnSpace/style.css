@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #15141e;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
+
+.mainBox {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#peoplesQuantity {
+  font-size: 40px;
+  text-align: center;
+}
+
+#number {
+  font-size: 150px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+#names {
+  margin-top: -100px;
+  padding-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+  gap: 40px;
+}
+
+.name {
+  height: 80px;
+  width: 500px;
+  border-radius: 10px;
+  background-color: #1e1c2b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: scale(0);
+  transition: transform .6s;
+}
+
+.show {
+  transform: scale(1);
+}
+
+.name:hover {
+  background-color: #1f1e2f;
+  transform: scale(1.1);
+}
