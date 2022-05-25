@@ -1,5 +1,0 @@
-Unix
-Bash
-Git 
-Github
-Javascript
