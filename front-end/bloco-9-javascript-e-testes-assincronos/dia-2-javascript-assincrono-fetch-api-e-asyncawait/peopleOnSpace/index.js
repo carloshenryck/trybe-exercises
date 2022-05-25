@@ -18,19 +18,23 @@ function addAnimation() {
 }
 
 async function fetchPeoples() {
-  const data = await fetch('http://api.open-notify.org/astros.json').then(response => response.json());
-  const numberOfPeople = data.number;
-  const persons = data.people;
-
-  quantity.innerHTML = `<span id='number'>${numberOfPeople}</span> <br> peoples`
-  persons.forEach(person => {
-    const p = document.createElement('p');
-    p.innerHTML += person.name;
-    p.classList.add('name');
-    peopleBox.appendChild(p);
-  })
-
-  addAnimation();
+  try {
+    const data = await fetch('http://api.open-notify.org/astros.json').then(response => response.json());
+    const numberOfPeople = data.number;
+    const persons = data.people;
+  
+    quantity.innerHTML = `<span id='number'>${numberOfPeople}</span> <br> peoples`
+    persons.forEach(person => {
+      const p = document.createElement('p');
+      p.innerHTML += person.name;
+      p.classList.add('name');
+      peopleBox.appendChild(p);
+    })
+  
+    addAnimation();
+  } catch(error) {
+    console.log(error);
+  }
 }
 
 fetchPeoples();
