@@ -28,8 +28,16 @@ const getVideoDetails = (video) => {
   })
 }
 
-loginUser('henryck@gmail.com', '1234567')
-  .then(user => getUserVideos(user.email))
-  .then(videos => getVideoDetails(videos[0]))
-  .then(videoDetails => console.log(videoDetails))
-  .catch(error => console.log(error));
+// Async - Await 
+
+const displayUser = async () => {
+  try {
+    const user = await loginUser('henryck@gmail.com', '1234567');
+    const videos = await getUserVideos(user.email);
+    const videoDetails = await getVideoDetails(videos[0]);
+    console.log(videoDetails);
+  } catch (error) {
+    console.log(error);
+  }
+}
+displayUser();

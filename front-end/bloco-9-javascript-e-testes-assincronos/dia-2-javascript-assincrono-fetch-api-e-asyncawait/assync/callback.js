@@ -12,8 +12,9 @@ const loginUser = (email, password, onSuccess, onError) => {
   }, 1500);
 };
 
-const getUservideos = (email, callback) => {
+const getUserVideos = (email, callback) => {
   setTimeout(() => {
+    console.log('getUserVideos');
     callback(['video1', 'video2', 'video3']);
   }, 2000);
 }
@@ -25,8 +26,7 @@ const getVideoDetails = (video, callback) => {
 }
 
 loginUser('henryck@gmail.com', '123456', (user) => {
-  getUservideos(user.email, (videos) => {
-    console.log(videos);
+  getUserVideos(user.email, (videos) => {
     getVideoDetails(videos[0], (videoDetails) => {
       console.log({ videoDetails });
     });
