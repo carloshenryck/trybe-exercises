@@ -10,6 +10,7 @@
 }
 
 .task-title {
+  word-break: break-all;
   cursor: pointer;
 }
 
@@ -19,4 +20,5 @@
   font-size: 24px;
   color: chartreuse;
   cursor: pointer;
+  margin: 0 5px;
 }
