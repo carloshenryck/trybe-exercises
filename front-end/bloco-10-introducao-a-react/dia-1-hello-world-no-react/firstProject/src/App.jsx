@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {v4 as uuidv4} from 'uuid'
 
+import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import './App.css'
@@ -40,19 +41,21 @@ const App = () => {
   }
 
   const handleTaskDeletion = (taskId) => {
-    const newTasks = tasks.filter(task => task.id !== taskId);
+    const newTask = tasks.filter(task => task.id !== taskId);
 
-    setTasks(newTasks);
+    setTasks(newTask);
   }
 
   return (
     <>
       <div className="container">
-        <AddTask handleTaskAddition={handleTaskAddition}/>
+        <Header />
+        <AddTask handleTaskAddition={handleTaskAddition} />
         <Tasks 
           tasks={tasks} 
           handleTaskClick={handleTaskClick} 
-          handleTaskDeletion={handleTaskDeletion} />
+          handleTaskDeletion={handleTaskDeletion}
+        />
       </div>
     </>
   )
